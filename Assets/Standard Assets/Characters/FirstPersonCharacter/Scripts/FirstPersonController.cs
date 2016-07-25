@@ -13,7 +13,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
-		[SerializeField] private float m_CrouchHeight;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -31,7 +30,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Camera m_Camera;
         private bool m_Jump;
-		private bool m_Crouch;
         private float m_YRotation;
         private Vector2 m_Input;
         private Vector3 m_MoveDir = Vector3.zero;
@@ -42,7 +40,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
-		private bool m_Crouching;
         private AudioSource m_AudioSource;
 
         // Use this for initialization
@@ -56,7 +53,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_StepCycle = 0f;
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
-			m_Crouching = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
@@ -71,27 +67,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
-				
-			if (CrossPlatformInputManager.GetButtonDown("Crouch")) {
-				m_Crouching = true;
-			} 
-			if (CrossPlatformInputManager.GetButtonUp("Crouch")) {
-				m_Crouching = false;
-			} 
 
-			//print(m_Crouching);
-
-			if (!m_Crouching) {
-				if (!m_PreviouslyGrounded && m_CharacterController.isGrounded) {
-					StartCoroutine(m_JumpBob.DoBobCycle());
-					PlayLandingSound();
-					m_MoveDir.y = 0f;
-					m_Jumping = false;
-				}
-				if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded) {
-					m_MoveDir.y = 0f;
-				}
-			} 
+            if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
+            {
+                StartCoroutine(m_JumpBob.DoBobCycle());
+                PlayLandingSound();
+                m_MoveDir.y = 0f;
+                m_Jumping = false;
+            }
+            if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
+            {
+                m_MoveDir.y = 0f;
+            }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
@@ -126,14 +113,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-
-				if (m_Crouching) {
-					transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.0f, m_CrouchHeight, 1.0f),Time.deltaTime*10);
-				} else {
-					transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.0f, 1.0f, 1.0f),Time.deltaTime*10);
-				} 
-
-                if (m_Jump && !m_Crouching)
+                if (m_Jump)
                 {
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();

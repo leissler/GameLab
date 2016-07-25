@@ -7,6 +7,9 @@ UnityGenerated/
 Library/
 Assets/AssetStoreTools*
 
+.*/
+*.dylib
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
@@ -34,3 +37,5 @@ ExportedObj/
 Icon?
 ehthumbs.db
 Thumbs.db
+
+web*/
