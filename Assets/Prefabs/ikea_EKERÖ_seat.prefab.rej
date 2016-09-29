@@ -1,0 +1,10 @@
+diff a/Assets/Prefabs/ikea_EKERÖ_seat.prefab b/Assets/Prefabs/ikea_EKERÖ_seat.prefab	(rejected hunks)
+@@ -12,7 +12,7 @@
+   - 23: {fileID: 2384800}
+   - 64: {fileID: 6402290}
+   m_Layer: 0
+-  m_Name: "ikea_EKERO\u0308_seat"
++  m_Name: "ikea_EKER\xD6_seat"
+   m_TagString: Untagged
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0

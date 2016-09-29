@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
+  m_IndirectSpecularColor: {r: 0.44711906, g: 0.49739355, b: 0.5761556, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1334,7 +1334,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.691
+      value: 3.58
       objectReference: {fileID: 0}
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1592,7 +1592,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.691
+      value: 3.58
       objectReference: {fileID: 0}
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1825,7 +1825,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.384
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4310,7 +4310,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405232, guid: c5a813df2267f4ed79635b32249382a9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.366
+      value: 1.499
       objectReference: {fileID: 0}
     - target: {fileID: 2322668, guid: c5a813df2267f4ed79635b32249382a9, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -4718,7 +4718,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.496
+      value: 3.39
       objectReference: {fileID: 0}
     - target: {fileID: 414704, guid: 4e49354e20852408b835ae2a3f0f996a, type: 2}
       propertyPath: m_LocalPosition.y
